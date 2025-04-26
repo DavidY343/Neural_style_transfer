@@ -1,0 +1,102 @@
+¡Excelente pregunta! La elección de capas y sus pesos depende del efecto que quieras lograr. Aquí tienes configuraciones probadas para diferentes resultados, desde estilos sutiles hasta transformaciones radicales:
+
+🔵 1. Estilo Subtil (Preservar Contenido)
+Efecto: Texturas y colores del estilo, pero la estructura del contenido sigue muy reconocible.
+Capas:
+
+Contenido: conv4_2 (estructura global)
+
+Estilo: conv1_1, conv2_1, conv3_1 (texturas finas y medianas)
+Pesos:
+
+python
+alpha = 1e0     # Contenido  
+beta = 1e4      # Estilo (10,000)  
+Learning Rate: 0.001
+Épocas: 500-1000
+Ejemplo: Convertir una foto en "acuarela ligera".
+
+🟠 2. Estilo Moderado (Balanceado)
+Efecto: Equilibrio claro entre contenido y estilo (como el paper original de Gatys).
+Capas:
+
+Contenido: conv4_2
+
+Estilo: conv1_1, conv2_1, conv3_1, conv4_1, conv5_1 (todas las capas estándar)
+Pesos:
+
+python
+alpha = 1       # Contenido  
+beta = 1e5      # Estilo (100,000)  
+Learning Rate: 0.001
+Épocas: 1000-2000
+Ejemplo: Foto estilo "Van Gogh" o "Picasso".
+
+🔴 3. Estilo Agresivo (Arte Abstracto)
+Efecto: El estilo domina, distorsionando formas pero manteniendo colores/composición.
+Capas:
+
+Contenido: conv3_1 (solo formas básicas)
+
+Estilo: conv1_1, conv1_2, conv2_1, conv2_2, conv3_1, conv4_1 (máximas texturas)
+Pesos:
+
+python
+alpha = 1e-1    # Contenido (0.1)  
+beta = 1e6      # Estilo (1,000,000)  
+Learning Rate: 0.0005 (para evitar artefactos)
+Épocas: 2000+
+Ejemplo: Imitar estilos como el "dripping" de Pollock o arte digital abstracto.
+
+🟢 4. Enfoque en Texturas Finas
+Efecto: Captura detalles como pinceladas, grano o patrones repetitivos.
+Capas:
+
+Contenido: conv4_2
+
+Estilo: conv1_1, conv1_2, conv2_1, conv2_2 (solo capas superficiales)
+Pesos:
+
+python
+alpha = 1e0     
+beta = 5e4      # Estilo (50,000)  
+Learning Rate: 0.001
+Épocas: 500-1500
+Ejemplo: Texturas de papel, tela o patrones geométricos.
+
+🟣 5. Estilo con Estructura Global
+Efecto: Prioriza composición del estilo (ej. paisajes estilizados).
+Capas:
+
+Contenido: conv4_2
+
+Estilo: conv4_1, conv4_2, conv5_1 (capas profundas)
+Pesos:
+
+python
+alpha = 1e0     
+beta = 2e5      # Estilo (200,000)  
+Learning Rate: 0.0005
+Épocas: 1500-3000
+Ejemplo: Transferir la atmósfera de un paisaje (ej. niebla, iluminación).
+
+📌 Recomendaciones clave:
+Prueba incremental: Empieza con la configuración "Moderada" y ajusta beta hacia arriba si necesitas más estilo.
+
+Capas superficiales: Si el estilo tiene muchas texturas (ej. grano de madera), añade conv1_2 y conv2_2.
+
+Monitoriza visualmente: El valor del loss es menos importante que el resultado visual. Guarda imágenes intermedias cada 100 épocas.
+
+Hardware: Para configuraciones con muchas capas (>5), reduce el tamaño de la imagen si tienes límites de GPU.
+
+¿Quieres que adapte alguna de estas configuraciones a tu código actual? Por ejemplo, podríamos modificar train_config para el caso "Estilo Subtil" así:
+
+python
+train_config = {
+    'num_epochs': 1000,
+    'learning_rate': 0.001,
+    'alpha': 1,
+    'beta': 1e4,
+    'capture_content_features_from': {'conv4_2'},
+    'capture_style_features_from': {'conv1_1', 'conv2_1', 'conv3_1'}
+}
