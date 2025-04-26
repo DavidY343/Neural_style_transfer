@@ -1,6 +1,6 @@
-num_epochs: 1000
+num_epochs: 2000
 learning_rate: 0.01
 alpha: 1
-beta: 10
-capture_content_features_from: {'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'}
+beta: 20
+capture_content_features_from: {'conv1_1', 'conv2_1', 'conv3_1', 'conv4_2', 'conv5_1'}
 capture_style_features_from: {'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'}

@@ -15,26 +15,26 @@ def main():
     #     "verbose": True,
 	# 	"video": True
     # }
-	config = {
-        "content_filepath": "videos/content/woman_with_bus_sliced.mp4",
-        "style_filepath": "videos/styles/the_night_cafe.jpg",
-        "output_dir": "videos/output/",
-        "output_image_size": (512, 512),
-        "train_config_path": "config/video_default.yaml",
-		"output_image_format": "jpg",
-        "verbose": True,
-		"video": True
-    }
 	# config = {
-    #     "content_filepath": "videos/output/content_frames/frame-00000001.jpg",
-    #     "style_filepath": "videos/styles/postimpressionism/VanGogh/the_night_cafe.jpg",
-    #     "output_dir": "videos/output/",
+    #     "content_filepath": "video_content/happy_heidi_cow_25fps.mp4",
+    #     "style_filepath": "styles/postimpressionism/VanGogh/starry_night_over_the_rhone.jpg",
+    #     "output_dir": "videos",
     #     "output_image_size": (512, 512),
-    #     "train_config_path": "config/video_mine.yaml",
+    #     "train_config_path": "config/video_default.yaml",
 	# 	"output_image_format": "jpg",
     #     "verbose": True,
-	# 	"video": False
+	# 	"video": True
     # }
+	config = {
+        "content_filepath": "videos/content_frames/frame-00000001.jpg",
+        "style_filepath": "styles/postimpressionism/VanGogh/wheat_field_with_cypresses.jpg",
+        "output_dir": "videos/",
+        "output_image_size": (512, 512),
+        "train_config_path": "config/video_mine.yaml",
+		"output_image_format": "jpg",
+        "verbose": True,
+		"video": False
+    }
 	if config["video"] == True:
 		video_style_transfer(config)
 	else:
