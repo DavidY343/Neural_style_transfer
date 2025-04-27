@@ -27,7 +27,8 @@ def main():
     # }
 	config = {
         "content_filepath": "videos/content_frames/frame-00000001.jpg",
-        "style_filepath": "styles/postimpressionism/VanGogh/wheat_field_with_cypresses.jpg",
+        #"style_filepath": "styles/postimpressionism/VanGogh/wheat_field_with_cypresses.jpg",
+		"style_filepath": "styles/blue_wave_flow.jpg",
         "output_dir": "videos/",
         "output_image_size": (512, 512),
         "train_config_path": "config/video_mine.yaml",
