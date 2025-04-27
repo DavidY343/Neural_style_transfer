@@ -1,0 +1,9 @@
+num_epochs: 2000
+learning_rate: 0.005
+alpha: 1
+beta: 100
+content_layers: {'conv4_2'}
+style_layers: {'conv1_1', 'conv1_2', 'conv2_1', 'conv2_2'}
+early_stopping: True
+patience: 50
+min_loss: 0.01

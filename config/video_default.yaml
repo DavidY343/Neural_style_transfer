@@ -1,6 +1,0 @@
-num_epochs: 2000 # less is faster
-learning_rate: 0.01 # also faster
-alpha: 1 # prioritize style
-beta: 100 # over content
-capture_content_features_from: {'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'}
-capture_style_features_from: {'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'}

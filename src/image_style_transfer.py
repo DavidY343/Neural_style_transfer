@@ -65,8 +65,8 @@ def image_style_transfer(config):
 	output_img_fmt,
 	content_img_name,
 	style_img_name,
-	verbose=True,
-	save_intermediate=True  
+	verbose=False,
+	save_intermediate=False  
 	)
 
 	final_name = f'{content_img_name}_with_{style_img_name}_final.{output_img_fmt}'

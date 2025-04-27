@@ -69,6 +69,19 @@ def _get_style_loss(style_feature, generated_feature):
 	return torch.mean((generated_gram - style_gram) ** 2) / (channel * height * width)
 	
 
+def check_early_stopping(epochs_no_improve, patience, min_loss, best_loss, total_loss):
+	"""Check if early stopping criteria are met."""
+	if epochs_no_improve >= patience:
+		return True
+	if best_loss - total_loss < min_loss:
+		epochs_no_improve += 1
+	else:
+		epochs_no_improve = 0
+		best_loss = total_loss
+
+	return False
+
+
 def train_nst(content, style, generated, device, train_config, output_dir=None,
 			output_img_fmt='jpg', content_img_name='content', style_img_name='style',
 			verbose=False, save_intermediate=False):
@@ -85,7 +98,9 @@ def train_nst(content, style, generated, device, train_config, output_dir=None,
 		{'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'})
 	capture_style_features_from = train_config.get('capture_style_features_from', 
 		{'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'})
-
+	early_stopping = train_config.get('early_stopping', False)
+	patience = train_config.get('patience', 100)
+	min_loss = train_config.get('min_loss', 0.01)
 	try:
 		capture_content_features_from = parse_layers(capture_content_features_from)
 		capture_style_features_from = parse_layers(capture_style_features_from)
@@ -110,9 +125,14 @@ def train_nst(content, style, generated, device, train_config, output_dir=None,
 	content_features = model(content)
 	style_features = model(style)
 
+	#early stopping variables
+	best_loss = float('inf')
+	epochs_no_improve = 0
+
 	# Entrenamiento
 	for epoch in range(num_epochs):
 		
+	
 		generated_features = model(generated)
 
 		content_loss = style_loss = 0
@@ -134,6 +154,11 @@ def train_nst(content, style, generated, device, train_config, output_dir=None,
 			path = os.path.join(intermediate_dir, f'{content_img_name}_with_{style_img_name}_{epoch + 1}.{output_img_fmt}')
 			save_styled_image(generated, path, device)
 			print(f"\tEpoch {epoch + 1}/{num_epochs}, loss = {total_loss.item()}")
+		
+
+		if early_stopping and check_early_stopping(epochs_no_improve, patience, min_loss, best_loss, total_loss.item()):
+			print(f"Early stopping at epoch {epoch + 1}/{num_epochs}, loss = {total_loss.item()}")
+			break
 
 	if verbose and save_intermediate and output_dir:
 		print(f"\tFinal images saved in: '{intermediate_dir}'")
