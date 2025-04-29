@@ -1,0 +1,15 @@
+De lo que llevo parace que el estilo abstracto es el go to 
+para las pocas epocas que conlleva entrenarlo.
+En los demas de los casos queda demasiado brusco. Aunque
+en casos en los que el estilo no es mucho no es muy brusco el
+metodo std, el subtle y el text parace funcionar decente siempre
+que no sea el fast. Ya que se desfigura.
+Para los demas casos el global coge muy poco estilo como para notar. Aunque
+acabo de ver para imagenes con un estilo que el uqe la pincelada esta 
+muy marcada deja denotar las lineas el global. Ejemplo con purple
+
+El subtle y el text tienda a coger los patrones de la imagne de estilo pero
+ a veces no lo consiguen como en udnie y en esos casos es mejor usar abs
+Como conclusion el stlye y el content apenas se diferencian
+Difernecias entre el fast y el slow es sobretodo lo agresivo que es. Ver el caso en red_fire
+Tambien en lo agresivo de los colores, tiende a coger mas rapido los colores de la imagen de estilo
