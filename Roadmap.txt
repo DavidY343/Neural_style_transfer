@@ -1,0 +1,27 @@
+Las 4 fotos:
+Foto 1: Green bridge y the night cafe
+	config = {
+        "content_filepath": "img_content/green_bridge.jpg",
+        "style_filepath": "styles/postimpressionism/VanGogh/the_night_cafe.jpg",
+        "output_dir": "img_results/",
+        "output_image_size": (640, 960),# other option 768x512px
+        "train_config_path": "config/img_moderate.yaml",
+		"output_image_format": "jpg",
+        "verbose": True,
+		"save_intermediate": True,
+		"video": False
+    }
+
+Foto 2: Green bridge y starry_night_over_the_rhone
+
+	config = {
+        "content_filepath": "img_content/green_bridge.jpg",
+        "style_filepath": "styles/postimpressionism/VanGogh/starry_night_over_the_rhone.jpg",
+        "output_dir": "img_results/",
+        "output_image_size": (640, 960),# other option 768x512px
+        "train_config_path": "config/img_moderate.yaml",
+		"output_image_format": "jpg",
+        "verbose": True,
+		"save_intermediate": True,
+		"video": False
+    }

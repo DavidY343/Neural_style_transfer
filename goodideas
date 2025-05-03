@@ -1,5 +1,6 @@
 De lo que llevo parace que el estilo abstracto es el go to 
 para las pocas epocas que conlleva entrenarlo.
+
 En los demas de los casos queda demasiado brusco. Aunque
 en casos en los que el estilo no es mucho no es muy brusco el
 metodo std, el subtle y el text parace funcionar decente siempre

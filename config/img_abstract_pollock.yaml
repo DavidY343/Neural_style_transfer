@@ -1,8 +1,0 @@
-# 🔴 3. Estilo Agresivo (Arte Abstracto)
-# Efecto: El estilo domina, distorsionando formas pero manteniendo colores/composición.
-num_epochs: 3000
-learning_rate: 0.0005
-alpha: 1e-1 
-beta: 1e6 
-capture_content_features_from: {'conv3_1'} 
-capture_style_features_from: {'conv1_1', 'conv1_2', 'conv2_1', 'conv2_2', 'conv3_1', 'conv4_1'}

@@ -17,6 +17,7 @@ def image_style_transfer(config):
 	output_dir = config.get("output_dir", ".")
 	output_size = config.get("output_image_size", (512, 512))
 	verbose = config.get('verbose', False)
+	save_intermediate = config.get('save_intermediate', False)
 	train_config_path = config.get('train_config_path', "config/img_default.yaml")
 	output_img_fmt = config.get('output_image_format', 'jpg')
 
@@ -65,8 +66,8 @@ def image_style_transfer(config):
 	output_img_fmt,
 	content_img_name,
 	style_img_name,
-	verbose=False,
-	save_intermediate=False  
+	verbose=verbose,
+	save_intermediate=save_intermediate  
 	)
 
 	final_name = f'{content_img_name}_with_{style_img_name}_final.{output_img_fmt}'
