@@ -34,7 +34,21 @@ Imagen: Little_dog.jpg + udnie.jpg:
     </div>
     <!-- Resultado -->
     <div style="margin-top: 15px; display: flex; justify-content: center;">
-        <img src="img_results/little_dog_jumping_with_udnie_final.jpg" alt="Resultado" style="max-width: 90%; height: auto;">
+        <img src="img_results/little_dog_jumping_with_udnie_final.jpg" alt="Resultado" style="max-width: 80%; height: 80%;">
+    </div>
+</div>
+
+<!-- Ejemplo Video -->
+Video: happy_heidi_cow_short_25fps.mp4 + pawel.jpg:
+<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
+    <!-- Contenido (GIF preview del video) + Estilo -->
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <video src="video_content/happy_heidi_cow_short_25fps.mp4" width="400" controls></video>
+        <img src="styles/pawel.jpg" alt="Imagen de estilo: Pawel" width="400">
+    </div>
+    <!-- Resultado -->
+    <div style="margin-top: 15px; display: flex; justify-content: center;">
+        <img src="video_results/happy_heidi_cow_short_25fps-pawel.gif" alt="Resultado" style="max-width: 80%; height: auto;">
     </div>
 </div>
 
