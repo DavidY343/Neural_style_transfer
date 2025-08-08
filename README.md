@@ -1,12 +1,10 @@
 # 🧠 Neural Style Transfer
 
-Este proyecto es una implementación modular de **Neural Style Transfer** (NST) desarrollado en **Python**, que permite aplicar estilos artísticos tanto en **imágenes** como en **videos**, utilizando redes neuronales convolucionales (CNN) basadas en el modelo **VGG19**.
-
+This project is a modular implementation of Neural Style Transfer (NST) developed in Python, enabling the application of artistic styles to both images and videos using convolutional neural networks (CNN) based on the VGG19 model.
 ---
-## 🎯 Objetivo
+## 🎯 Objetive
 
-Explorar y entender el funcionamiento de las redes convolucionales aplicadas al arte, analizando cómo diferentes combinaciones de capas afectan la transferencia de estilo y permitiendo experimentar con diversos niveles de agresividad estilística.
-
+To explore and understand the functioning of convolutional networks applied to art, analyzing how different layer combinations affect style transfer and enabling experimentation with various levels of stylistic intensity.
 ---
 ## 📸 Ejemplos de Resultados
 
@@ -23,21 +21,7 @@ Imagen: green_bridge.jpg + the_night_cafe.jpg:
         <img src="img_results/green_bridge_with_the_night_cafe_final.jpg" alt="Resultado" style="max-width: 90%; height: auto;">
     </div>
 </div>
----
-<!-- Ejemplo 2 -->
-Imagen: Little_dog.jpg + udnie.jpg:
-<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
-    <!-- Contenido + Estilo -->
-    <div style="display: flex; justify-content: center; gap: 10px;">
-        <img src="img_content/little_dog_jumping.jpg" alt="Imagen de contenido: Little Dog" width="400" height="400">
-        <img src="styles/udnie.jpg" alt="Imagen de estilo: Udnie" width="400">
-    </div>
-    <!-- Resultado -->
-    <div style="margin-top: 15px; display: flex; justify-content: center;">
-        <img src="img_results/little_dog_jumping_with_udnie_final.jpg" alt="Resultado" height="400">
-    </div>
-</div>
----
+
 <!-- Ejemplo Video -->
 Video: happy_heidi_cow_short_25fps.mp4 + pawel.jpg:
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
@@ -55,102 +39,99 @@ Video: happy_heidi_cow_short_25fps.mp4 + pawel.jpg:
 
 
 ---
-## 🧱 Estructura del Proyecto
+## 🧱 Project Structure
 
 ```plaintext
 Neural_style_transfer/
 │
-├── config/                   # Archivos YAML para configurar estilos y contenidos
+├── config/                   # YAML files for configuring styles and content
 │   ├── img_config/
 │   ├── grid_video_config/
 │   └── config_idea
 │
-├── img_content/              # Imágenes base (contenido)
-├── styles/                   # Imágenes artísticas (estilo)
-├── img_results/              # Resultados de imagen
+├── img_content/              # Base images (content)
+├── styles/                   # Artistic images (style)
+├── img_results/              # Image results
 │
-├── video_content/            # Videos de entrada
-├── video_results/            # Resultados de video
+├── video_content/            # Input videos
+├── video_results/            # Video results
 │   ├── content_frames/
 │   └── transferred_frames/
 │
-├── src/                      # Código fuente principal
+├── src/                      # Main source code
 │   ├── image_style_transfer.py
 │   ├── video_style_transfer.py
 │   ├── video_style_transfer_in_medias_res.py
 │   ├── train_model.py
 │   └── utils.py
 │
-├── scripts/                  # Utilidades auxiliares
+├── scripts/                  # Helper utilities
 │   ├── cuda.py
 │   └── img_size.py
 │
-├── grid_search.py            # Búsqueda de mejores combinaciones de capas
-├── main.py                   # Script principal
+├── grid_search.py            # Search for optimal layer combinations
+├── main.py                   # Main script
+├── requirements.txt          # Python dependencies
 └── README.md
 
 ```
 ---
-## 🧪 ¿Cómo Funciona?
+## 🧪 How It Works
 
-El sistema fusiona una imagen de contenido con una imagen de estilo, optimizando una imagen de salida para minimizar:
-- **Pérdida de contenido** entre la imagen generada y la imagen base.
-- **Pérdida de estilo** entre la imagen generada y la imagen de estilo.
+The system fuses a content image with a style image, optimizing an output image to minimize:
+- **Content loss** between the generated image and the base content image..
+- **Style loss** between the generated image and the style image.
 
-Se basa en el paper original de *Leon Gatys et al.* pero con múltiples configuraciones personalizables desde YAML para experimentar con distintas capas de contenido y estilo.
+It is based on the original paper by Leon Gatys et al. but includes multiple customizable configurations via YAML, allowing experimentation with different content and style layers.
 
 ---
-## ⚙️ Tecnologías Usadas
+## ⚙️ Technologies Used
 - 🐍 Python
-- 🔬 [PyTorch](https://pytorch.org/) (modelo VGG19 preentrenado)
-- 📊 Scikit-learn (para análisis y selección de combinaciones)
-- 📁 YAML (para configuración de capas y estilos)
-- 📷 OpenCV (procesamiento de imágenes y video)
+- 🔬 [PyTorch](https://pytorch.org/)  (pre-trained VGG19 model)
+- 📊 Scikit-learn (for analysis and combination selection)
+- 📁 YAML (for analysis and combination selection)
+- 📷 OpenCV (for analysis and combination selection)
 
 ---
 ## 🎨 Tipos de Estilo
 
-El proyecto permite probar diferentes **combinaciones de capas** para lograr distintos efectos:
+The project allows testing different layer combinations to achieve distinct effects:
 
-| Tipo de Estilo | Descripción |
+| Style Type | Description |
 |---|---|
-| 🔵 **Subtle (Estilo Ligero)** | Conserva la estructura, añade texturas finas. Ideal para contenido reconocible. |
-| 🟠 **Moderado** | Balance entre contenido y estilo. Similar al paper original. |
-| 🔴 **Agresivo / Abstracto** | El estilo domina completamente. Ideal para arte experimental. |
-| 🟢 **Texturas Finas** | Captura pinceladas y patrones. Útil para estilos como acuarela o pastel. |
-| 🟣 **Estructura Global** | Captura composición global del estilo. Mejora resultados con paisajes. |
+| 🔵 **Subtle** | 	Preserves structure, adds fine textures. Ideal for recognizable content. |
+| 🟠 **Moderate** | Balanced between content and style. Similar to the original paper. |
+| 🔴 **Aggressive / Abstract** | 	Style fully dominates. Best for experimental art. |
+| 🟢 **Fine Textures** | Captures brushstrokes and patterns. Great for watercolor or pastel styles. |
+| 🟣 **Glboal Structure** | Captures the overall composition of the style. Works well with landscapes. |
 
 ---
-## 🧠 Conclusiones y Observaciones
-- **Estilo Abstracto** funciona bien con pocas épocas, pero puede ser demasiado agresivo para estructuras delicadas.
-- **Métodos `std`, `subtle`, `text`** funcionan bien salvo en modo rápido (`fast`), que tiende a distorsionar.
-- **Global** capta mejor los estilos con trazos marcados, pero puede ser muy sutil con estilos suaves.
-- La selección de capas influye drásticamente en el resultado visual: el *contenido* controla la estructura, el *estilo* determina la textura y color.
-- Diferencias entre `fast` y `slow` afectan la intensidad y fidelidad del estilo aplicado.
+## 🧠 Conclusions and Observations
+- **Abstract Style** works well with fewer epochs but can be overly aggressive for delicate structures.
+- **Methods `std`, `subtle`, `text`**  methods perform well except in fast mode, which tends to distort.
+- **Global** captures styles with strong strokes better but may be too subtle with soft styles.
+- Layer selection drastically impacts visual results: content controls structure, style defines texture and color.
+- ifferences between ``fast`` and ``slow`` affect the intensity and fidelity of the applied style.
 
 ---
 ## 📦 Ejecución Rápida
 ```bash
-# Clona el repositorio
+# Clone the repository
 git clone [https://github.com/DavidY343/Neural_style_transfer.git](https://github.com/DavidY343/Neural_style_transfer.git)
 cd Neural_style_transfer
 
-# Instala dependencias
+# Install dependencies
 pip install -r requirements.txt
 
-# Ejecuta una transferencia de estilo y modifica el json del archivo main.py
-python main.py 
-# Puedes configurar fácilmente los estilos, imágenes y parámetros en los archivos YAML incluidos en /config.
+# Run a style transfer and adjust the JSON in main.py
+python main.py
+# You can easily configure styles, images, and parameters via the YAML files in /config.
+
 
 ```
 
+## 🔍 Advanced Exploration
+A grid search script (grid_search.py) is also included to experiment with different layer and content/style weight combinations for both images and videos.
 
-
-Video: happy_heidi_cow_short_25fps.mp4 + pawel.jpg → happy_heidi_cow_short_25fps-pawel.mp4
-
-## 🔍 Exploración Avanzada
-También se incluye un script de búsqueda de combinaciones (grid_search.py) para experimentar con distintas capas y pesos de contenido/estilo, tanto en imágenes como en videos.
-
-## ✍️ Autor
-Este proyecto fue desarrollado como una forma de entender el funcionamiento de las redes convolucionales (CNNs) mediante un enfoque artístico y experimental. Combina procesamiento visual con investigación técnica de modelos y capas.
-
+## ✍️ Author
+This project was developed as a way to understand the workings of convolutional neural networks (CNNs) through an artistic and experimental approach, combining visual processing with technical research on models and layers.
