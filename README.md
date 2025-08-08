@@ -8,6 +8,17 @@ Este proyecto es una implementación modular de **Neural Style Transfer** (NST) 
 Explorar y entender el funcionamiento de las redes convolucionales aplicadas al arte, analizando cómo diferentes combinaciones de capas afectan la transferencia de estilo y permitiendo experimentar con diversos niveles de agresividad estilística.
 
 ---
+## 📸 Ejemplos de Resultados
+
+Imagen: green_bridge.jpg + the_night_cafe.jpg:
+<div style="display: flex; gap: 10px;">
+    <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="300">
+    <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="300">
+</div>
+
+![Resultado Green Bridge con The Night Cafe](img_results\green_bridge_with_the_night_cafe_final.jpg)
+
+---
 ## 🧱 Estructura del Proyecto
 
 ```plaintext
@@ -97,12 +108,7 @@ python main.py
 
 ```
 
-## 📸 Ejemplos de Resultados
 
-
-![Imagen de contenido: Green Bridge](img_content/green_bridge.jpg)
-![Imagen de estilo: The Night Cafe](styles\postimpressionism\VanGogh\the_night_cafe.jpgs)
-![Resultado Green Bridge con Starry Night](img_results/green_bridge_with_starry_night_final.jpg)
 
 Video: happy_heidi_cow_short_25fps.mp4 + pawel.jpg → happy_heidi_cow_short_25fps-pawel.mp4
 
