@@ -117,7 +117,7 @@ The project allows testing different layer combinations to achieve distinct effe
 - ifferences between ``fast`` and ``slow`` affect the intensity and fidelity of the applied style.
 
 ---
-## 📦 Ejecución Rápida
+## 📦 Quick Execution
 ```bash
 # Clone the repository
 git clone [https://github.com/DavidY343/Neural_style_transfer.git](https://github.com/DavidY343/Neural_style_transfer.git)
