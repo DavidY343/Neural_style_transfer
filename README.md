@@ -10,29 +10,13 @@ Explorar y entender el funcionamiento de las redes convolucionales aplicadas al 
 ---
 ## 📸 Ejemplos de Resultados
 
-Imagen: green_bridge.jpg + the_night_cafe.jpg:
-<div style="display: flex; gap: 10px;">
-    <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="400">
-    <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="400">
-</div>
-
-
-![Resultado Green Bridge con The Night Cafe](img_results/green_bridge_with_the_night_cafe_final.jpg)
-
-Imagen: Little_dog.jpg + udnie.jpg:
-<div style="display: flex; gap: 10px;">
-    <img src="img_content/little_dog_jumping.jpg" alt="Imagen de contenido: Little Dog" width="400">
-    <img src="styles/udnie.jpg" alt="Imagen de estilo: Udnie" width="400">
-</div>
-
-![Resultado Little Dog con Udnie](img_results/little_dog_jumping_with_udnie_final.jpg)
-
 <!-- Ejemplo 1 -->
+Imagen: green_bridge.jpg + the_night_cafe.jpg:
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
     <!-- Contenido + Estilo -->
     <div style="display: flex; justify-content: center; gap: 10px;">
-        <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="3400">
-        <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="3400">
+        <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="400">
+        <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="400">
     </div>
     <!-- Resultado -->
     <div style="margin-top: 15px; display: flex; justify-content: center;">
@@ -41,6 +25,7 @@ Imagen: Little_dog.jpg + udnie.jpg:
 </div>
 
 <!-- Ejemplo 2 -->
+Imagen: Little_dog.jpg + udnie.jpg:
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
     <!-- Contenido + Estilo -->
     <div style="display: flex; justify-content: center; gap: 10px;">
