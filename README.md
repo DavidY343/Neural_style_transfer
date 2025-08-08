@@ -31,8 +31,8 @@ Imagen: Little_dog.jpg + udnie.jpg:
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
     <!-- Contenido + Estilo -->
     <div style="display: flex; justify-content: center; gap: 10px;">
-        <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="300">
-        <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="300">
+        <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="3400">
+        <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="3400">
     </div>
     <!-- Resultado -->
     <div style="margin-top: 15px; display: flex; justify-content: center;">
@@ -44,8 +44,8 @@ Imagen: Little_dog.jpg + udnie.jpg:
 <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
     <!-- Contenido + Estilo -->
     <div style="display: flex; justify-content: center; gap: 10px;">
-        <img src="img_content/little_dog_jumping.jpg" alt="Imagen de contenido: Little Dog" width="300">
-        <img src="styles/udnie.jpg" alt="Imagen de estilo: Udnie" width="300">
+        <img src="img_content/little_dog_jumping.jpg" alt="Imagen de contenido: Little Dog" width="400">
+        <img src="styles/udnie.jpg" alt="Imagen de estilo: Udnie" width="400">
     </div>
     <!-- Resultado -->
     <div style="margin-top: 15px; display: flex; justify-content: center;">
