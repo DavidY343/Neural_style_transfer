@@ -1,6 +1,7 @@
-# 🧠 Neural Style Transfer
+## 🧠 Neural Style Transfer
 
 This project is a modular implementation of Neural Style Transfer (NST) developed in Python, enabling the application of artistic styles to both images and videos using convolutional neural networks (CNN) based on the VGG19 model.
+
 ---
 ## 🎯 Objetive
 
