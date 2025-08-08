@@ -93,7 +93,7 @@ def train_nst(content, style, generated, device, train_config, output_dir=None,
 	num_epochs = train_config.get('num_epochs', 2000)
 	lr = train_config.get('learning_rate', 0.01)
 	alpha = train_config.get('alpha', 50)
-	beta = train_config.get('beta', 0.001)
+	beta = train_config.get('beta', 100)
 	capture_content_features_from = train_config.get('capture_content_features_from', 
 		{'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'})
 	capture_style_features_from = train_config.get('capture_style_features_from', 
@@ -132,7 +132,6 @@ def train_nst(content, style, generated, device, train_config, output_dir=None,
 	# Entrenamiento
 	for epoch in range(num_epochs):
 		
-	
 		generated_features = model(generated)
 
 		content_loss = style_loss = 0
