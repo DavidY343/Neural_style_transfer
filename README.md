@@ -12,8 +12,8 @@ Explorar y entender el funcionamiento de las redes convolucionales aplicadas al 
 
 Imagen: green_bridge.jpg + the_night_cafe.jpg:
 <div style="display: flex; gap: 10px;">
-    <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge">
-    <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe">
+    <img src="img_content/green_bridge.jpg" alt="Imagen de contenido: Green Bridge" width="500">
+    <img src="styles/postimpressionism/VanGogh/the_night_cafe.jpg" alt="Imagen de estilo: The Night Cafe" width="500">
 </div>
 
 ![Resultado Green Bridge con The Night Cafe](img_results/green_bridge_with_the_night_cafe_final.jpg)
