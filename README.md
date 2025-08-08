@@ -7,6 +7,7 @@ This project is a modular implementation of Neural Style Transfer (NST) develope
 ## 🎯 Objetive
 
 To explore and understand the functioning of convolutional networks applied to art, analyzing how different layer combinations affect style transfer and enabling experimentation with various levels of stylistic intensity.
+
 ---
 ## 📸 Ejemplos de Resultados
 
